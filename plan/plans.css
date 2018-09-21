@@ -1,0 +1,35 @@
+.plans-ul {
+    list-style: none;
+    line-height: 26px;
+    color: #3a3a3a;
+    border-radius: 10px;
+    font-family: "Microsoft YaHei";
+}
+
+.plans-li {
+    cursor: default;
+}
+
+.plans-li.past {
+    color: #9c9c9c;
+}
+
+.plans-li.persent {
+    color: #a08c20;
+}
+
+.plans-li .plans-time {
+    float: left;
+    width: 50px;
+    display: inline-block;
+}
+
+.plans-li .plans-event {
+    width: calc(100% - 90px);
+    margin-right: 40px;
+    display: inline-block;
+}
+
+.plans-li.active {
+    color: #a08c20;
+}

@@ -1,0 +1,24 @@
+.timeline {
+    clear: both;
+    height: 100px;
+}
+
+.clock {
+    width: 70%;
+    float: right;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0 auto;
+}
+
+.clock canvas {
+    position: relative !important;
+}
+
+.plans {
+    width: calc(30% - 10px);
+    float: left;
+    border-radius: 10px;
+    margin: 5px;
+    background-color: #d6d6d6;
+}

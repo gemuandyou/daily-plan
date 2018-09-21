@@ -1,0 +1,11 @@
+<!-- <canvas id="clock" width="1000" height="1000" style="background-color: antiquewhite">浏览器不支持Canvas</canvas> -->
+<canvas id="clock" width="500" height="500" style="background-color: transparent;
+position: absolute; left: 20px;">浏览器不支持Canvas</canvas>
+<!-- <canvas id="clock" width="200" height="200" style="background-color: antiquewhite">浏览器不支持Canvas</canvas> -->
+<script src="clock.js"></script>
+<script>
+    Clock.draw(document.getElementById('clock'), {
+        timePoints: [08.01, 10.16, 20.3],
+        events: ['birthday', 'xxxxx', 'todo']
+    });
+</script>

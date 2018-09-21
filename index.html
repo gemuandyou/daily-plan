@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>命图</title>
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <link rel="stylesheet" type="text/css" href="./plan/plans.css">
+</head>
+
+<body>
+    <div class="layer"></div>
+
+    <div class="clock">
+        <!-- <canvas id="clock" width="1000" height="1000" style="background-color: antiquewhite">浏览器不支持Canvas</canvas> -->
+        <canvas id="clock" width="500" height="500" style="background-color: transparent;
+                position: absolute; left: 20px;">浏览器不支持Canvas</canvas>
+        <!-- <canvas id="clock" width="200" height="200" style="background-color: antiquewhite">浏览器不支持Canvas</canvas> -->
+    </div>
+
+    <div class="plans">
+    </div>
+
+    <div class="timeline">
+
+    </div>
+
+    <script src="./clock/clock.js"></script>
+    <script src="./plan/plans.js"></script>
+    <script>
+        // 计划列表
+        var plansData = [
+            { time: 10.2, event: 'xxxx' },
+            { time: 15.08, event: '时代发生的几率发大水发多少发生的发生的发生的发生时代发生的几率发大水发多少发生的发生的发生的发生法接受得了' },
+            { time: 18.20, event: 'abc' }
+        ];
+        var plans = new Plans(document.getElementsByClassName('plans')[0], plansData);
+
+        // 时钟
+        Clock.draw(document.getElementById('clock'), {
+            timePoints: plansData
+        });
+        Clock.on('clickTime', (params) => {
+            if (plans) {
+                plans.active(params);
+            }
+        });
+    </script>
+</body>
+
+</html>
