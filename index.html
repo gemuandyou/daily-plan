@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>命图</title>
+    <title>Clock</title>
     <link rel="stylesheet" type="text/css" href="./index.css">
     <link rel="stylesheet" type="text/css" href="./plan/plans.css">
 </head>
@@ -31,8 +31,12 @@
         // 计划列表
         var plansData = [
             { time: 10.2, event: 'xxxx' },
-            { time: 15.08, event: '时代发生的几率发大水发多少发生的发生的发生的发生时代发生的几率发大水发多少发生的发生的发生的发生法接受得了' },
-            { time: 18.20, event: 'abc' }
+            { time: 15.08, event: '时代发生的几率\n发大水\r发多少发生的\s\n发生的发生的发生时代发生的几率发大水发多少发生的发生的发生的发生法\n接受得111\n了' },
+            { time: 18.20, event: 'abc' },
+            { time: 20.20, event: '<font color=red>Font</font>' },
+            { time: 22.20, event: 'a' },
+            { time: 0.20, event: 'b' },
+            { time: 14.20, event: 'c' }
         ];
         var plans = new Plans(document.getElementsByClassName('plans')[0], plansData);
 

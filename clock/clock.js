@@ -79,7 +79,7 @@
                     ctx.beginPath();
                     var fontSize = circleSize / 12.5 > 10 ? circleSize / 12.5 : 11;
                     ctx.font = fontSize + 'px Microsoft Yahei';
-                    ctx.strokeStyle = '#0035fd';
+                    ctx.strokeStyle = '#E2E2E2';
                     ctx.strokeText((hour < 10 ? '0' + hour : hour) + ':' + (minute < 10 ? '0' + minute : minute) + ':' + 
                                    (second < 10 ? '0' + second : second), -fontSize * 2, -circleSize * 0.5);
                     ctx.closePath();
@@ -321,9 +321,20 @@
                         ctx.fill();
                         ctx.closePath();
                         ctx.beginPath();
-                        ctx.fillStyle = '#ffef20';
+                        ctx.fillStyle = '#FEFEFE';
                         ctx.font = '13px Microsoft Yahei';
-                        ctx.fillText(event, hourX - ctx.measureText(event).width / 2, -hourY - 20);
+                        if (event) {
+                          var row = 0;
+                          var lines = event.split('\n');
+                          for (var line of lines) {
+                            var textWidth = ctx.measureText(event).width;
+                            var skipRow = lines.length - row;
+                            skipRow = skipRow > 1 ? skipRow : 1;
+                            var offset = row == lines.length ? 0 : skipRow * 7;
+                            ctx.fillText(line, hourX - ctx.measureText(textWidth).width / 2, skipRow * (-hourY - 20) - offset);
+                            row++;
+                          }
+                        }
                         ctx.fill();
                         ctx.closePath();
                         element.style.cursor = 'pointer';
